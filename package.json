@@ -1,0 +1,48 @@
+{
+  "name": "sanitizer-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel --out-dir dist src",
+    "build:watch": "npm run build -- --watch",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "keywords": [
+    "js",
+    "sanitizer",
+    "library"
+  ],
+  "author": "Adriano de Azevedo <adrianopato.az@gmail.com> (https://drianoaz.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drianoaz/sanitizer.js/issues"
+  },
+  "homepage": "https://github.com/drianoaz/sanitizer.js#README",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.3.2",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.1",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0"
+  }
+}
